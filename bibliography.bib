@@ -5,3 +5,277 @@
   author = {Leslie Lamport}
 }
 
+@misc{manes2019artscienceengineeringfuzzing,
+  title={The Art, Science, and Engineering of Fuzzing: A Survey}, 
+  author={Valentin J. M. Manes and HyungSeok Han and Choongwoo Han and Sang Kil Cha and Manuel Egele and Edward J. Schwartz and Maverick Woo},
+  year={2019},
+  eprint={1812.00140},
+  archivePrefix={arXiv},
+  primaryClass={cs.CR},
+  url={https://arxiv.org/abs/1812.00140}, 
+}
+
+@ARTICLE{8371326,
+  author={Liang, Hongliang and Pei, Xiaoxiao and Jia, Xiaodong and Shen, Wuwei and Zhang, Jian},
+  journal={IEEE Transactions on Reliability}, 
+  title={Fuzzing: State of the Art}, 
+  year={2018},
+  volume={67},
+  number={3},
+  pages={1199-1218},
+  keywords={Fuzzing;Computer bugs;Software testing;Security;Fuzzing;reliability;security;software testing;survey},
+  doi={10.1109/TR.2018.2834476},
+}
+
+@inproceedings{Schloegel_2024,
+  title={SoK: Prudent Evaluation Practices for Fuzzing},
+  url={http://dx.doi.org/10.1109/SP54263.2024.00137},
+  DOI={10.1109/sp54263.2024.00137},
+  booktitle={2024 IEEE Symposium on Security and Privacy (SP)},
+  publisher={IEEE},
+  author={Schloegel, Moritz and Bars, Nils and Schiller, Nico and Bernhard, Lukas and Scharnowski, Tobias and Crump, Addison and Ale-Ebrahim, Arash and Bissantz, Nicolai and Muench, Marius and Holz, Thorsten},
+  year={2024},
+  month=may, pages={1974–1993}
+}
+
+@inproceedings {269444,
+  author = {Fabrice Bellard},
+  title = {{QEMU}, a Fast and Portable Dynamic Translator},
+  booktitle = {2005 USENIX Annual Technical Conference (USENIX ATC 05)},
+  year = {2005},
+  address = {Anaheim, CA},
+  url = {https://www.usenix.org/conference/2005-usenix-annual-technical-conference/qemu-fast-and-portable-dynamic-translator},
+  publisher = {USENIX Association},
+  month = apr
+}
+
+@inproceedings{10.5555/2342821.2342849,
+author = {Serebryany, Konstantin and Bruening, Derek and Potapenko, Alexander and Vyukov, Dmitry},
+title = {AddressSanitizer: a fast address sanity checker},
+year = {2012},
+publisher = {USENIX Association},
+address = {USA},
+abstract = {Memory access bugs, including buffer overflows and uses of freed heap memory, remain a serious problem for programming languages like C and C++. Many memory error detectors exist, but most of them are either slow or detect a limited set of bugs, or both.This paper presents AddressSanitizer, a new memory error detector. Our tool finds out-of-bounds accesses to heap, stack, and global objects, as well as use-after-free bugs. It employs a specialized memory allocator and code instrumentation that is simple enough to be implemented in any compiler, binary translation system, or even in hardware.AddressSanitizer achieves efficiency without sacrificing comprehensiveness. Its average slowdown is just 73\% yet it accurately detects bugs at the point of occurrence. It has found over 300 previously unknown bugs in the Chromium browser and many bugs in other software.},
+booktitle = {Proceedings of the 2012 USENIX Conference on Annual Technical Conference},
+pages = {28},
+numpages = {1},
+location = {Boston, MA},
+series = {USENIX ATC'12}
+}
+
+@article{10.1145/96267.96279,
+author = {Miller, Barton P. and Fredriksen, Lars and So, Bryan},
+title = {An empirical study of the reliability of UNIX utilities},
+year = {1990},
+issue_date = {Dec. 1990},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+volume = {33},
+number = {12},
+issn = {0001-0782},
+url = {https://doi.org/10.1145/96267.96279},
+doi = {10.1145/96267.96279},
+abstract = {The following section describes the tools we built to test the utilities. These tools include the fuzz (random character) generator, ptyjig (to test interactive utilities), and scripts to automate the testing process. Next, we will describe the tests we performed, giving the types of input we presented to the utilities. Results from the tests will follow along with an analysis of the results, including identification and classification of the program bugs that caused the crashes. The final section presents concluding remarks, including suggestions for avoiding the types of problems detected by our study and some commentary on the bugs we found. We include an Appendix with the user manual pages for fuzz and ptyjig.},
+journal = {Commun. ACM},
+month = dec,
+pages = {32–44},
+numpages = {13}
+}
+
+@inproceedings{10.1145/1292414.1292416,
+author = {Godefroid, Patrice},
+title = {Random testing for security: blackbox vs. whitebox fuzzing},
+year = {2007},
+isbn = {9781595938817},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/1292414.1292416},
+doi = {10.1145/1292414.1292416},
+abstract = {Fuzz testing is an effective technique for finding security vulnerabilities in software. Fuzz testing is a form of blackbox random testing which randomly mutates well-formed inputs and tests the program on the resulting data. In some cases, grammars are used to randomly generate the well-formed inputs. This also allows the tester to encode application-specific knowledge (such as corner cases of particular interest) as part of the grammar, and to specify test heuristics by assigning probabilistic weights to production rules. Although fuzz testing can be remarkably effective, the limitations of blackbox random testing are well-known. For instance, the then branch of the conditional statement "if (x==10) then" has only one in 232 chances of being exercised if x is a randomly chosen 32-bit input value. This intuitively explains why random testing usually provides low code coverage.Recently, we have proposed an alternative approach of whitebox fuzz testing [4], building upon recent advances in dynamic symbolic execution and test generation [2]. Starting with a well-formed input, our approach symbolically executes the program dynamically and gathers constraints on inputs from conditional statements encountered along the way. The collected constraints are then systematically negated and solved with a constraint solver, yielding new inputs that exercise different execution paths in the program. This process is repeated using a novel search algorithm with a coverage-maximizing heuristic designed to find defects as fast as possible in large search spaces. For example, symbolic execution of the above code fragment on the input x = 0 generates the constraint x ≠ 10. Once this constraint is negated and solved, it yields x = 10, which gives us a new input that causes the program to follow the then branch of the given conditional statement.We have implemented this approach in SAGE (Scalable, Automated, Guided Execution), a tool based on x86 instruction-level tracing and emulation for whitebox fuzzing of file-reading Windows applications. While still in an early stage of development and deployment, SAGE has already discovered more than 30 new bugs in large shipped Windows applications including image processors, media players and file decoders. Several of these bugs are potentially exploitable memory access violations.In this talk, I will briefly review blackbox fuzzing for security testing. Then, I will present an overview of our recent work on whitebox fuzzing [4] (joint work with Michael Y. Levin and David Molnar), with an emphasis on the key algorithms and techniques needed to make this approach effective and scalable (see also [1, 3]).},
+booktitle = {Proceedings of the 2nd International Workshop on Random Testing: Co-Located with the 22nd IEEE/ACM International Conference on Automated Software Engineering (ASE 2007)},
+pages = {1},
+numpages = {1},
+keywords = {software testing, security, program verification, automatic test generation},
+location = {Atlanta, Georgia},
+series = {RT '07}
+}
+
+@article{CHEN2018118,
+title = {A systematic review of fuzzing techniques},
+journal = {Computers \& Security},
+volume = {75},
+pages = {118-137},
+year = {2018},
+issn = {0167-4048},
+doi = {https://doi.org/10.1016/j.cose.2018.02.002},
+url = {https://www.sciencedirect.com/science/article/pii/S0167404818300658},
+author = {Chen Chen and Baojiang Cui and Jinxin Ma and Runpu Wu and Jianchao Guo and Wenqian Liu},
+keywords = {Software bug, Vulnerability, Fuzzing, Dynamic symbolic execution, Coverage guide, Grammar representation, Scheduling algorithms, Taint analysis, Static analysis},
+abstract = {Fuzzing is an effective and widely used technique for finding security bugs and vulnerabilities in software. It inputs irregular test data into a target program to try to trigger a vulnerable condition in the program execution. Since the first random fuzzing system was constructed, fuzzing efficiency has been greatly improved by combination with several useful techniques, including dynamic symbolic execution, coverage guide, grammar representation, scheduling algorithms, dynamic taint analysis, static analysis and machine learning. In this paper, we will systematically review these techniques and their corresponding representative fuzzing systems. By introducing the principles, advantages and disadvantages of these techniques, we hope to provide researchers with a systematic and deeper understanding of fuzzing techniques and provide some references for this field.}
+}
+
+@inproceedings{10.1145/1250734.1250746,
+author = {Nethercote, Nicholas and Seward, Julian},
+title = {Valgrind: a framework for heavyweight dynamic binary instrumentation},
+year = {2007},
+isbn = {9781595936332},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/1250734.1250746},
+doi = {10.1145/1250734.1250746},
+abstract = {Dynamic binary instrumentation (DBI) frameworks make it easy to build dynamic binary analysis (DBA) tools such as checkers and profilers. Much of the focus on DBI frameworks has been on performance; little attention has been paid to their capabilities. As a result, we believe the potential of DBI has not been fully exploited.In this paper we describe Valgrind, a DBI framework designed for building heavyweight DBA tools. We focus on its unique support for shadow values-a powerful but previously little-studied and difficult-to-implement DBA technique, which requires a tool to shadow every register and memory value with another value that describes it. This support accounts for several crucial design features that distinguish Valgrind from other DBI frameworks. Because of these features, lightweight tools built with Valgrind run comparatively slowly, but Valgrind can be used to build more interesting, heavyweight tools that are difficult or impossible to build with other DBI frameworks such as Pin and DynamoRIO.},
+booktitle = {Proceedings of the 28th ACM SIGPLAN Conference on Programming Language Design and Implementation},
+pages = {89–100},
+numpages = {12},
+keywords = {Memcheck, Valgrind, dynamic binary analysis, dynamic binary instrumentation, shadow values},
+location = {San Diego, California, USA},
+series = {PLDI '07}
+}
+
+@inproceedings{10.1145/1275571.1275600,
+author = {Reddi, Vijay Janapa and Settle, Alex and Connors, Daniel A. and Cohn, Robert S.},
+title = {PIN: a binary instrumentation tool for computer architecture research and education},
+year = {2004},
+isbn = {9781450347334},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/1275571.1275600},
+doi = {10.1145/1275571.1275600},
+abstract = {Computer architecture embraces a tremendous number of ever-changing inter-connected concepts and information, yet computer architecture education is very often static, seemingly motionless. Computer architecture is commonly taught using simple piecewise methods of explaining how the hardware performs a given task, rather than characterizing the interaction of software and hardware. Visualization tools allow students to interactively explore basic concepts in computer architecture but are limited in their ability to engage students in research and design concepts. Likewise as the development of simulation models such as caches, branch predictors, and pipelines aid student understanding of architecture components, such models have limitations in the workloads that can be examined because of issues with execution time and environment. Overall, to effectively understand modern architectures, it is simply essential to experiment the characteristics of real application workloads. Likewise, understanding program behavior is necessary to effective programming, comprehension of architecture bottlenecks, and hardware design. Computer architecture education must include experience in analyzing program behavior and workload characteristics using effective tools. To explore workload characteristic analysis in computer architecture design, we propose using PIN, a binary instrumentation tool for computer architecture research and education projects.},
+booktitle = {Proceedings of the 2004 Workshop on Computer Architecture Education: Held in Conjunction with the 31st International Symposium on Computer Architecture},
+pages = {22–es},
+location = {Munich, Germany},
+series = {WCAE '04}
+}
+
+@inproceedings{malmain:hal-04500872,
+  TITLE = {{LibAFL QEMU: A Library for Fuzzing-oriented Emulation}},
+  AUTHOR = {Malmain, Romain and Fioraldi, Andrea and Francillon, Aur{\'e}lien},
+  URL = {https://hal.science/hal-04500872},
+  BOOKTITLE = {{BAR 2024, Workshop on Binary Analysis Research, colocated with NDSS 2024}},
+  ADDRESS = {San Diego (CA), United States},
+  YEAR = {2024},
+  MONTH = Mar,
+  PDF = {https://hal.science/hal-04500872v1/file/bar24_malmain.pdf},
+  HAL_ID = {hal-04500872},
+  HAL_VERSION = {v1},
+}
+
+@inproceedings {257204,
+author = {Andrea Fioraldi and Dominik Maier and Heiko Ei{\ss}feldt and Marc Heuse},
+title = {{AFL++} : Combining Incremental Steps of Fuzzing Research},
+booktitle = {14th USENIX Workshop on Offensive Technologies (WOOT 20)},
+year = {2020},
+url = {https://www.usenix.org/conference/woot20/presentation/fioraldi},
+publisher = {USENIX Association},
+month = aug
+}
+
+@inproceedings{9230171,
+  author={Fioraldi, Andrea and D’Elia, Daniele Cono and Querzoni, Leonardo},
+  booktitle={2020 IEEE Secure Development (SecDev)}, 
+  title={Fuzzing Binaries for Memory Safety Errors with QASan}, 
+  year={2020},
+  volume={},
+  number={},
+  pages={23-30},
+  keywords={Fuzzing;Safety;Software;Resource management;Tools;Computer bugs;Proposals},
+  doi={10.1109/SecDev45635.2020.00019}}
+
+@inproceedings{10.1145/3548606.3560602,
+author = {Fioraldi, Andrea and Maier, Dominik Christian and Zhang, Dongjia and Balzarotti, Davide},
+title = {LibAFL: A Framework to Build Modular and Reusable Fuzzers},
+year = {2022},
+isbn = {9781450394505},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3548606.3560602},
+doi = {10.1145/3548606.3560602},
+abstract = {The release of AFL marked an important milestone in the area of software security testing, revitalizing fuzzing as a major research topic and spurring a large number of research studies that attempted to improve and evaluate the different aspects of the fuzzing pipeline.Many of these studies implemented their techniques by forking the AFL codebase. While this choice might seem appropriate at first, combining multiple forks into a single fuzzer requires a high engineering overhead, which hinders progress in the area and prevents fair and objective evaluations of different techniques. The highly fragmented landscape of the fuzzing ecosystem also prevents researchers from combining orthogonal techniques and makes it difficult for end users to adopt new prototype solutions.To tackle this problem, in this paper we propose LibAFL, a framework to build modular and reusable fuzzers. We discuss the different components generally used in fuzzing and map them to an extensible framework. LibAFL allows researchers and engineers to extend the core fuzzer pipeline and share their new components for further evaluations. As part of LibAFL, we integrated techniques from more than 20 previous works and conduct extensive experiments to show the benefit of our framework to combine and evaluate different approaches. We hope this can help to shed light on current advancements in fuzzing and provide a solid base for comparative and extensible research in the future.},
+booktitle = {Proceedings of the 2022 ACM SIGSAC Conference on Computer and Communications Security},
+pages = {1051–1065},
+numpages = {15},
+keywords = {fuzzing, fuzz testing, framework},
+location = {Los Angeles, CA, USA},
+series = {CCS '22}
+}
+
+@inproceedings{43308,
+title	= {MemorySanitizer: fast detector of uninitialized memory use in C++},
+author	= {Evgeniy Stepanov and Konstantin Serebryany},
+year	= {2015},
+booktitle	= {Proceedings of the 2015 IEEE/ACM International Symposium on Code Generation and Optimization (CGO)},
+pages	= {46--55},
+address	= {San Francisco, CA, USA}}
+
+@inproceedings{10.1145/1791194.1791203,
+author = {Serebryany, Konstantin and Iskhodzhanov, Timur},
+title = {ThreadSanitizer: data race detection in practice},
+year = {2009},
+isbn = {9781605587936},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/1791194.1791203},
+doi = {10.1145/1791194.1791203},
+abstract = {Data races are a particularly unpleasant kind of threading bugs. They are hard to find and reproduce -- you may not observe a bug during the entire testing cycle and will only see it in production as rare unexplainable failures. This paper presents ThreadSanitizer -- a dynamic detector of data races. We describe the hybrid algorithm (based on happens-before and locksets) used in the detector. We introduce what we call dynamic annotations -- a sort of race detection API that allows a user to inform the detector about any tricky synchronization in the user program. Various practical aspects of using ThreadSanitizer for testing multithreaded C++ code at Google are also discussed.},
+booktitle = {Proceedings of the Workshop on Binary Instrumentation and Applications},
+pages = {62–71},
+numpages = {10},
+keywords = {testing, dynamic data race detection, concurrency bugs, Valgrind},
+location = {New York, New York, USA},
+series = {WBIA '09}
+}
+
+@inproceedings{10.1145/2663716.2663755,
+author = {Durumeric, Zakir and Li, Frank and Kasten, James and Amann, Johanna and Beekman, Jethro and Payer, Mathias and Weaver, Nicolas and Adrian, David and Paxson, Vern and Bailey, Michael and Halderman, J. Alex},
+title = {The Matter of Heartbleed},
+year = {2014},
+isbn = {9781450332132},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/2663716.2663755},
+doi = {10.1145/2663716.2663755},
+abstract = {The Heartbleed vulnerability took the Internet by surprise in April 2014. The vulnerability, one of the most consequential since the advent of the commercial Internet, allowed attackers to remotely read protected memory from an estimated 24--55\% of popular HTTPS sites. In this work, we perform a comprehensive, measurement-based analysis of the vulnerability's impact, including (1) tracking the vulnerable population, (2) monitoring patching behavior over time, (3) assessing the impact on the HTTPS certificate ecosystem, and (4) exposing real attacks that attempted to exploit the bug. Furthermore, we conduct a large-scale vulnerability notification experiment involving 150,000 hosts and observe a nearly 50\% increase in patching by notified hosts. Drawing upon these analyses, we discuss what went well and what went poorly, in an effort to understand how the technical community can respond more effectively to such events in the future.},
+booktitle = {Proceedings of the 2014 Conference on Internet Measurement Conference},
+pages = {475–488},
+numpages = {14},
+keywords = {heartbleed, internet-wide scanning, openssl, security},
+location = {Vancouver, BC, Canada},
+series = {IMC '14}
+}
+
+@Article{electronics12143010,
+AUTHOR = {Cheng, Yixuan and Chen, Wenxin and Fan, Wenqing and Huang, Wei and Yu, Gaoqing and Liu, Wen},
+TITLE = {IoTFuzzBench: A Pragmatic Benchmarking Framework for Evaluating IoT Black-Box Protocol Fuzzers},
+JOURNAL = {Electronics},
+VOLUME = {12},
+YEAR = {2023},
+NUMBER = {14},
+ARTICLE-NUMBER = {3010},
+URL = {https://www.mdpi.com/2079-9292/12/14/3010},
+ISSN = {2079-9292},
+ABSTRACT = {High scalability and low operating cost make black-box protocol fuzzing a vital tool for discovering vulnerabilities in the firmware of IoT smart devices. However, it is still challenging to compare black-box protocol fuzzers due to the lack of unified benchmark firmware images, complete fuzzing mutation seeds, comprehensive performance metrics, and a standardized evaluation framework. In this paper, we design and implement IoTFuzzBench, a scalable, modular, metric-driven automation framework for evaluating black-box protocol fuzzers for IoT smart devices comprehensively and quantitatively. Specifically, IoTFuzzBench has so far included 14 real-world benchmark firmware images, 30 verified real-world benchmark vulnerabilities, complete fuzzing seeds for each vulnerability, 7 popular fuzzers, and 5 categories of complementary performance metrics. We deployed IoTFuzzBench and evaluated 7 popular black-box protocol fuzzers on all benchmark firmware images and benchmark vulnerabilities. The experimental results show that IoTFuzzBench can not only provide fast, reliable, and reproducible experiments, but also effectively evaluate the ability of each fuzzer to find vulnerabilities and the differential performance on different performance metrics. The fuzzers found a total of 13 vulnerabilities out of 30. None of these fuzzers can outperform the others on all metrics. This result demonstrates the importance of comprehensive metrics. We hope our findings ease the burden of fuzzing evaluation in IoT scenarios, advancing more pragmatic and reproducible fuzzer benchmarking efforts.},
+DOI = {10.3390/electronics12143010}
+}
+
+@INPROCEEDINGS{8989335,
+  author={Zhang, Cao and Dong, Wei Yu and Zhu Ren, Yu},
+  booktitle={2019 IEEE 2nd International Conference on Computer and Communication Engineering Technology (CCET)}, 
+  title={INSTRCR: Lightweight instrumentation optimization based on coverage-guided fuzz testing}, 
+  year={2019},
+  volume={},
+  number={},
+  pages={74-78},
+  keywords={instrumentation;binary;fuzzing;control flow graph},
+  doi={10.1109/CCET48361.2019.8989335}}
+
+@inproceedings {269899,
+author = {Bryan M. Cantrill and Michael W. Shapiro and Adam H. Leventhal},
+title = {Dynamic Instrumentation of Production Systems},
+booktitle = {2004 USENIX Annual Technical Conference (USENIX ATC 04)},
+year = {2004},
+address = {Boston, MA},
+url = {https://www.usenix.org/conference/2004-usenix-annual-technical-conference/dynamic-instrumentation-production-systems},
+publisher = {USENIX Association},
+month = jun
+}
