@@ -12,15 +12,15 @@
 % TODO: change thesis information
 \newcommand*{\getUniversity}{Technische Universität München}
 \newcommand*{\getFaculty}{Informatics}
-\newcommand*{\getDegree}{Informatics}
+\newcommand*{\getDegree}{Data Engineering and Analytics}
 \newcommand*{\getSchool}{Computation, Information and Technology}
-\newcommand*{\getTitle}{Thesis title}
-\newcommand*{\getTitleGer}{Titel der Abschlussarbeit}
-\newcommand*{\getAuthor}{Author}
-\newcommand*{\getDoctype}{Bachelor's Thesis, Master's Thesis, \ldots}
+\newcommand*{\getTitle}{Enhancing Software Fuzzing through Dynamic Instrumentation}
+\newcommand*{\getTitleGer}{Verbesserung des Software-Fuzzings durch dynamische Instrumentierung}
+\newcommand*{\getAuthor}{Cosmin Banica}
+\newcommand*{\getDoctype}{Master's Thesis}
 \newcommand*{\getSupervisor}{Supervisor}
 \newcommand*{\getAdvisor}{Advisor}
-\newcommand*{\getSubmissionDate}{Submission date}
+\newcommand*{\getSubmissionDate}{15.01.2024}
 \newcommand*{\getSubmissionLocation}{Munich}
 
 \begin{document}
@@ -43,6 +43,11 @@
 \mainmatter{}
 
 \input{chapters/01_introduction}
+\input{chapters/02_state_of_the_art}
+\input{chapters/03_dynamic_sanitization}
+\input{chapters/04_evaluation}
+\input{chapters/05_future_work}
+\input{chapters/06_conclusion}
 % TODO: add more chapters here
 
 \appendix{}
@@ -51,8 +56,13 @@
 
 \addchap{Abbreviations}
 \begin{acronym}
-	\itemsep-.25\baselineskip
+	\itemsep-.25\baselineskip{}
 	\acro{TUM}[TUM]{Technical University of Munich}
+	\acro{VM}[VM]{Virtual Machine}
+	\acro{ASAN}[ASAN]{Address Sanitizer}
+	\acro{QASAN}[QASAN]{QEMU Address Sanitizer}
+	\acro{TCG}[TCG]{Tiny Code Generator}
+	\acro{AFL}[AFL]{American Fuzzy Lop}
 	% TODO: add acronyms
 \end{acronym}
 
